@@ -1,0 +1,10 @@
+{
+  "name": "Junaed Ahmed",
+  "student_id": "S101",
+  "credits_completed": 90,
+  "credits_required": 120,
+  "courses": [
+    {"name": "Software Engineering", "marks": 85},
+    {"name": "Computer Networks", "marks": "78"}
+  ]
+}

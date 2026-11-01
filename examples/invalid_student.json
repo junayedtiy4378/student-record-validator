@@ -1,0 +1,7 @@
+{
+  "name": " ",
+  "student_id": "101",
+  "credits_completed": 90,
+  "credits_required": 120,
+  "courses": [{"name": "Networks", "marks": 110}]
+}
