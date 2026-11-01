@@ -2,44 +2,6 @@
 
 A beginner-friendly Python command-line project using Pydantic v2 to validate student JSON records, compute results, and export structured data. No API key, database, web server, or paid service is required.
 
-## Setup (Python 3.11 or newer)
-
-Extract the ZIP, open a terminal in this folder, then run:
-
-Windows:
-```powershell
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -r requirements.txt
-python main.py examples/valid_student.json
-```
-
-macOS / Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python main.py examples/valid_student.json
-```
-
-Expected output:
-```text
-Student: Junaed Ahmed
-Courses validated: 2
-Average marks: 81.5
-Result: PASS
-Saved to validated_student.json
-```
-
-Use a different output name for subsequent runs:
-```bash
-python main.py examples/valid_student.json --output another_result.json
-python main.py examples/invalid_student.json
-python -m unittest discover -s tests -v
-```
-
-Validation failures return exit code 1 and explain the field errors. Successful exports return 0. Existing output files and the original input are protected from overwrite. Output parent directories must already exist.
-
 ## Workflow
 
 The CLI reads one student record, validates it with Pydantic, and exports a report when all checks pass.
@@ -94,26 +56,6 @@ The exported JSON includes computed fields (`average_marks` and `result`). It is
 - `tests/`: validation and CLI tests.
 - `.github/workflows/tests.yml`: runs tests on pushes and pull requests.
 
-## Push to GitHub
-
-Create an empty repository named `student-record-validator` under [junayedtiy4378](https://github.com/junayedtiy4378) on GitHub. Leave README, license, and .gitignore unchecked, then run these commands from this project folder.
-
-```bash
-git config --global user.name "Junaed Ahmed"
-git config --global user.email "junayedtiy437@gmail.com"
-git init
-git add .
-git commit -m "Build student record validator with Pydantic"
-git branch -M main
-git remote add origin https://github.com/junayedtiy4378/student-record-validator.git
-git push -u origin main
-```
-
-If `origin` already exists, update it instead:
-
-```bash
-git remote set-url origin https://github.com/junayedtiy4378/student-record-validator.git
-git push -u origin main
 ```
 
 ## Possible extensions
